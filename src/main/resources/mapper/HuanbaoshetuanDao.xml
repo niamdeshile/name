@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.HuanbaoshetuanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.HuanbaoshetuanEntity" id="huanbaoshetuanMap">
+        <result property="shetuanbianhao" column="shetuanbianhao"/>
+        <result property="mima" column="mima"/>
+        <result property="shetuanmingcheng" column="shetuanmingcheng"/>
+        <result property="fuzerenxingming" column="fuzerenxingming"/>
+        <result property="shetuanrenshu" column="shetuanrenshu"/>
+        <result property="tupian" column="tupian"/>
+        <result property="shetuanjianjie" column="shetuanjianjie"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.HuanbaoshetuanVO" >
+		SELECT * FROM huanbaoshetuan  huanbaoshetuan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.HuanbaoshetuanVO" >
+		SELECT  huanbaoshetuan.* FROM huanbaoshetuan  huanbaoshetuan
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.HuanbaoshetuanView" >
+
+		SELECT  huanbaoshetuan.* FROM huanbaoshetuan  huanbaoshetuan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.HuanbaoshetuanView" >
+		SELECT * FROM huanbaoshetuan  huanbaoshetuan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
